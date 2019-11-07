@@ -19,8 +19,8 @@ This maven module contains e2e acceptance tests
 * Execute `mvn clean install -D cucumber.options="--tags @api"` in order to run API tests
 * Execute `mvn clean install -D cucumber.options="--tags @ui"` in order to run UI tests
 * Execute `mvn clean install` for all test suites
-* Supported browsers are: Chrome, ChromeHeadless, Selenoid (dockerized Chrome)
-* In order to run tests in parallel mode set dataproviderthreadcount to value > 1 for maven-failsafe-plugin properties in pom.xml
+* Supported browsers are: Chrome(default), ChromeHeadless, Selenoid (dockerized Chrome). Pass following parameter `-D browser ChromeHeadless` in oder to run UI tests in headless mode
+* In order to run tests in parallel mode set `dataproviderthreadcount` to value `> 1` for maven-failsafe-plugin properties in pom.xml
 
 <a name="reports"></a>
 ### Reports  
