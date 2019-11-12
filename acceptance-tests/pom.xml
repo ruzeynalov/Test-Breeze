@@ -254,7 +254,6 @@
                                 <resource>
                                     <directory>src/test/resources</directory>
                                     <includes>
-                                        <include>environment.xml</include>
                                         <include>categories.json</include>
                                     </includes>
                                 </resource>
