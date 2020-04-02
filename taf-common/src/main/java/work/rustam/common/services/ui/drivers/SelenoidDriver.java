@@ -43,7 +43,7 @@ public class SelenoidDriver implements WebDriverProvider {
 		browser.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 		try {
 			RemoteWebDriver driver = new RemoteWebDriver(
-					URI.create("http://172.21.21.63:4444/wd/hub").toURL(),
+					URI.create("enter_your_selenoid_url_here").toURL(),
 					browser
 			);
 			driver.manage().window().setSize(new Dimension(1920, 1080));
