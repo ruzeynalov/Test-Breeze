@@ -19,21 +19,30 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import work.rustam.common.utils.TestStatusText;
 import work.rustam.common.utils.session.Key;
 import work.rustam.common.utils.session.Session;
+import cucumber.api.PickleStepTestStep;
 import cucumber.api.Scenario;
+import cucumber.api.TestCase;
 import cucumber.api.java.After;
+import cucumber.api.java.AfterStep;
 import cucumber.api.java.Before;
+import cucumber.api.java.BeforeStep;
+
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.lang.reflect.Field;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static work.rustam.common.services.ui.drivers.DriverManager.initBrowser;
 
 @Slf4j
 public class CucumberHooks {
+    int currentStepDefIndex;
     private static final TestStatusText testStatusText = new TestStatusText();
     private static int failedTests = 0;
     private static int passedTests = 0;
@@ -41,6 +50,30 @@ public class CucumberHooks {
 
     @Value("${webdriver.browser}")
     private String browser;
+    
+    @BeforeStep
+     public void logCurrentStepInfo(Scenario scenario) throws Exception {
+
+         Field f = scenario.getClass().getDeclaredField("testCase");
+         f.setAccessible(true);
+         TestCase r = (TestCase) f.get(scenario);
+
+         List<PickleStepTestStep> stepDefs = r.getTestSteps()
+                 .stream()
+                 .filter(x -> x instanceof PickleStepTestStep)
+                 .map(x -> (PickleStepTestStep) x)
+                 .collect(Collectors.toList());
+
+         PickleStepTestStep currentStepDef = stepDefs
+                 .get(currentStepDefIndex);
+         log.info("Current step is " + currentStepDef.getStepText());
+
+     }
+
+     @AfterStep
+     public void incrementStep(Scenario scenario) {
+         currentStepDefIndex += 1;
+     }
 
     @Before
     public void setScenarioInfoIntoLog(Scenario scenario) {
