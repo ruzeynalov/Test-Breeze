@@ -18,6 +18,7 @@ package skeleton_tests.stepsDef;
 import cucumber.api.java.en.And;
 
 import static com.codeborne.selenide.Selenide.sleep;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CommonStepsDef extends AbstractStepsDef {
 
@@ -28,5 +29,6 @@ public class CommonStepsDef extends AbstractStepsDef {
 
     @And("The status code is {int}")
     public void theStatusCodeIs(int arg0) {
+        assertThat(restService.getResponse().getStatusCode()).isEqualTo(arg0);
     }
 }
