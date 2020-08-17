@@ -22,7 +22,7 @@
         </encoder>
     </appender>
 
-    <logger name="work.rustam.common" level="INFO"/>
+    <logger name="com.cerner.pophealth.cldi.qa.common" level="INFO"/>
     <logger name="io.restassured" level="INFO"/>
     <logger name="org.springframework" level="WARN"/>
     <logger name="io.cucumber" level="INFO"/>

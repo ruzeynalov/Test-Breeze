@@ -17,9 +17,7 @@ This maven project contains two submodules: common/core module of test automatio
 * Open a terminal or command prompt
 * Go to project's root
 * Execute `mvn clean install -D cucumber.options="--tags @api"` in order to run API tests
-* Execute `mvn clean install -D cucumber.options="--tags @ui"` in order to run UI tests
 * Execute `mvn clean install` for all test suites
-* Supported browsers are: Chrome(default), ChromeHeadless, Selenoid (dockerized Chrome). Pass following parameter `-D browser ChromeHeadless` in oder to run UI tests in headless mode
 * In order to run tests in parallel mode set `dataproviderthreadcount` to value `> 2` for maven-failsafe-plugin properties in pom.xml
 
 <a name="reports"></a>

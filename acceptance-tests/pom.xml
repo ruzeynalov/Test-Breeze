@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>e2e-acceptance-tests</artifactId>
-    <groupId>work.rustam</groupId>
+    <groupId>com.cerner.pophealth.cldi.qa</groupId>
     <version>1.0.0</version>
 
     <properties>
@@ -32,7 +32,7 @@
     <dependencies>
         <!--Modules of TAF-->
         <dependency>
-            <groupId>work.rustam</groupId>
+            <groupId>com.cerner.pophealth.cldi.qa</groupId>
             <artifactId>taf-common</artifactId>
             <version>1.0.0</version>
         </dependency>
@@ -130,12 +130,6 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber4-jvm</artifactId>
-            <version>${allure.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-selenide -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-selenide</artifactId>
             <version>${allure.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-assertj -->
