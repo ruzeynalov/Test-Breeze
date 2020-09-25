@@ -5,11 +5,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>e2e-acceptance-tests</artifactId>
-    <groupId>com.cerner.pophealth.cldi.qa</groupId>
+    <groupId>work.rustam</groupId>
     <version>1.0.0</version>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <compiler.plugin.version>3.8.1</compiler.plugin.version>
@@ -32,7 +32,7 @@
     <dependencies>
         <!--Modules of TAF-->
         <dependency>
-            <groupId>com.cerner.pophealth.cldi.qa</groupId>
+            <groupId>work.rustam</groupId>
             <artifactId>taf-common</artifactId>
             <version>1.0.0</version>
         </dependency>
@@ -132,6 +132,12 @@
             <artifactId>allure-cucumber4-jvm</artifactId>
             <version>${allure.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-selenide -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-assertj -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -181,7 +187,7 @@
                     <properties>
                         <property>
                             <name>dataproviderthreadcount</name>
-                            <value>1</value>
+                            <value>3</value>
                         </property>
                     </properties>
                     <includes>

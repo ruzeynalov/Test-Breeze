@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>taf-common</artifactId>
-    <groupId>com.cerner.pophealth.cldi.qa</groupId>
+    <groupId>work.rustam</groupId>
     <version>1.0.0</version>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <compiler.plugin.version>3.8.1</compiler.plugin.version>
@@ -15,26 +15,13 @@
         <spring.version>5.2.0.RELEASE</spring.version>
         <lombok.version>1.18.8</lombok.version>
         <logback.version>1.1.3</logback.version>
+        <selenide.version>5.2.4</selenide.version>
         <jackson.version>2.10.0</jackson.version>
         <rest-assured>3.3.0</rest-assured>
-        <guava.version>29.0-jre</guava.version>
         <allure.version>2.12.1</allure.version>
-        <apache.commons.version>2.7</apache.commons.version>
     </properties>
 
     <dependencies>
-        <!--Guava-->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
-        <!-- Apache Commons -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${apache.commons.version}</version>
-        </dependency>
         <!-- Logger -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -86,6 +73,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <!--Selenide-->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
         <!--Allure-->
         <dependency>
