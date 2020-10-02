@@ -23,7 +23,7 @@ import static com.codeborne.selenide.Selenide.*;
 @Service
 public class GoogleResultsPage{
 	public ElementsCollection results() {
-		return $$("div#res .r h3");
+		return $$("#search  h3");
 	}
 
 	public ElementsCollection navigationLabels() {
