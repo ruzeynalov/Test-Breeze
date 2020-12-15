@@ -8,8 +8,8 @@ This maven project contains two submodules: common/core module of test automatio
 <a name="required-software-and-tools"></a>
 ### Required Software and Tools & Prerequisites
 
-* **Java** version: **Oracle Java 11** and higher (Execute `java -version` in command line after installation)
-* **Apache Maven** version: **3.6.0** and higher (Execute `mvn -version` in command line after installation)
+* **Java** version: **Oracle Java 8* and higher (Execute `java -version` in command line after installation)
+* **Apache Maven** version: **3.6.1** and higher (Execute `mvn -version` in command line after installation)
 
  <a name="how-to-run-acceptance-tests"></a>
 ### How to build maven projects and run all tests 
