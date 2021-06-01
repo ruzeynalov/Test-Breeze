@@ -15,7 +15,6 @@
  */
 package skeleton_tests.stepsDef;
 
-import com.codeborne.selenide.Selenide;
 import work.rustam.common.services.ui.pages.GoogleStartPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -25,12 +24,13 @@ import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.open;
 
 public class GoogleSearchStepsDef extends AbstractStepsDef {
 
 	@Given("^I open Google Page$")
 	public void openHomePage() {
-		googleStartPage = Selenide.open(baseUrl, GoogleStartPage.class);
+		googleStartPage = open(baseUrl, GoogleStartPage.class);
 	}
 
 	@When("^Enter search query into text input$")
