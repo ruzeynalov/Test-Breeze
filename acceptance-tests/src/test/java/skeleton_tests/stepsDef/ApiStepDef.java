@@ -16,8 +16,8 @@
 
 package skeleton_tests.stepsDef;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Value;
 import work.rustam.common.services.api.models.UserResponse;
 import work.rustam.common.services.api.models.UsersResponse;

@@ -16,9 +16,9 @@
 package skeleton_tests.stepsDef;
 
 import work.rustam.common.services.ui.pages.GoogleStartPage;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 import java.util.List;
 
@@ -31,11 +31,13 @@ public class GoogleSearchStepsDef extends AbstractStepsDef {
 	@Given("^I open Google Page$")
 	public void openHomePage() {
 		googleStartPage = open(baseUrl, GoogleStartPage.class);
+		googleStartPage.acceptAll().click();
+
 	}
 
 	@When("^Enter search query into text input$")
 	public void performSearch() {
-		googleResultsPage = googleStartPage.search("selenide");
+		googleResultsPage = googleResultsPage.search("selenide");
 	}
 
 	@Then("^Search results returned$")
@@ -44,7 +46,7 @@ public class GoogleSearchStepsDef extends AbstractStepsDef {
 		googleResultsPage.results().get(0).shouldHave(text("Selenide:"));
 	}
 
-	@Then("^Verify that footer contains elements:$")
+	@Then("^Verify search results returned selenide website as first link:$")
 	public void verifyThatFooterContainsElements(List<String> footerElementsNames) {
 		googleResultsPage.navigationLabels().shouldHave(texts(footerElementsNames));
 	}

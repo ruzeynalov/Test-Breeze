@@ -17,16 +17,19 @@ package skeleton_tests.configuration;
 
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.test.context.TestPropertySources;
 import uk.org.lidalia.sysoutslf4j.context.SysOutOverSLF4J;
+
 
 
 @Configuration
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan("work.rustam.common.services")
+
 @PropertySources({
-        @PropertySource("classpath:properties/env/${app_env}.properties"),
-        @PropertySource("classpath:properties/endpoint/${app_env}-endpoint.properties"),
-        @PropertySource("classpath:properties/common/webdrivermanager.properties"),
+        @PropertySource("classpath:/properties/env/${app_env}.properties"),
+        @PropertySource("classpath:/properties/endpoint/${app_env}-endpoint.properties"),
+        @PropertySource("classpath:/properties/common/webdrivermanager.properties"),
 })
 public class AppConfig {
 

@@ -16,6 +16,7 @@
 package work.rustam.common.services.ui.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
@@ -23,24 +24,24 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class SelenoidDriver implements WebDriverProvider {
-
+	@Nonnull
 	@Override
-	public WebDriver createDriver(DesiredCapabilities capabilities) {
+	public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 		String currTimeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYYY-MM-dd_HH:mm"));
 
 		DesiredCapabilities browser = new DesiredCapabilities();
 		browser.setBrowserName("chrome");
-		browser.setVersion("75.0");
 		browser.setCapability("enableVNC", true);
 		browser.setCapability("enableVideo", true);
 		browser.setCapability("videoName", new StringBuilder(currTimeStamp).append(".mp4").toString());
-		browser.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+		browser.setCapability(CapabilityType.UNHANDLED_PROMPT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 		try {
 			RemoteWebDriver driver = new RemoteWebDriver(
 					URI.create("http://172.21.21.63:4444/wd/hub").toURL(),

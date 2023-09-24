@@ -15,7 +15,7 @@
  */
 package skeleton_tests.stepsDef;
 
-import cucumber.api.java.en.And;
+import io.cucumber.java.en.And;
 
 import static com.codeborne.selenide.Selenide.sleep;
 

@@ -15,6 +15,7 @@
  */
 package skeleton_tests.stepsDef;
 
+import io.cucumber.spring.CucumberContextConfiguration;
 import work.rustam.common.services.api.RestClient;
 import work.rustam.common.services.ui.pages.GoogleResultsPage;
 import work.rustam.common.services.ui.pages.GoogleStartPage;

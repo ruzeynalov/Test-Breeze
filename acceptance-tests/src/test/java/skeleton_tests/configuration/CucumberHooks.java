@@ -16,12 +16,12 @@
 package skeleton_tests.configuration;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.cucumber.java.Scenario;
 import work.rustam.common.utils.TestStatusText;
 import work.rustam.common.utils.session.Key;
 import work.rustam.common.utils.session.Session;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;

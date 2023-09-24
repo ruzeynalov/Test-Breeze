@@ -77,7 +77,7 @@ public class RestClient {
 
     //GET
     public Response sendGetRequest(String endPoint, HashMap<String, String> paramsMap) {
-        return response = given().spec(request).parameters(paramsMap).get(endPoint);
+        return response = given().spec(request).params(paramsMap).get(endPoint);
     }
 
     public Response sendGetRequest(String endPoint) {
