@@ -16,15 +16,17 @@
 package work.rustam.common.services.ui.pages;
 
 
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;
 
 import static com.codeborne.selenide.Selenide.*;
 
 @Service
 public class GoogleStartPage{
-	public GoogleResultsPage search(String query) {
-		$(By.name("q")).setValue(query).pressEnter();
-		return page(GoogleResultsPage.class);
+	public SelenideElement acceptAll()
+	{
+		return $(By.xpath("(//div[@role='none'])[12]"));
 	}
 }

@@ -1,4 +1,3 @@
-@Google Demo
 Feature: Search. Run query and analyze test results
 
   @SeverityLevel.NORMAL
@@ -19,8 +18,5 @@ Feature: Search. Run query and analyze test results
   Scenario: 01.01.02 Google Search. Verify Footer Element Names
     Given I open Google Page
     And Enter search query into text input
-    Then Verify that footer contains elements:
-      | Help          |
-      | Send feedback |
-      | Privacy       |
-      | Terms         |
+    Then Verify search results returned selenide website as first link:
+      | Selenide: concise UI tests in Java            |

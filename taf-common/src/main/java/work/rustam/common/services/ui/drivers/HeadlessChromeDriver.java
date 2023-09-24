@@ -17,23 +17,24 @@ package work.rustam.common.services.ui.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
+import javax.annotation.Nonnull;
 
 public class HeadlessChromeDriver implements WebDriverProvider {
+    @Nonnull
     @Override
-    public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
+    public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--window-size=1920,1080");
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-gpu");
 
-        WebDriverManager.getInstance(CHROME).setup();
+        WebDriverManager.getInstance();
         return new ChromeDriver(chromeOptions);
     }
 }

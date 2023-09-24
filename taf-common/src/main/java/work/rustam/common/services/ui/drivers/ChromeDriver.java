@@ -18,21 +18,21 @@ package work.rustam.common.services.ui.drivers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
+import javax.annotation.Nonnull;
 
 public class ChromeDriver implements WebDriverProvider {
+	@Nonnull
 	@Override
-	public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
+	public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("useAutomationExtension", false);
 		options.addArguments("disable-extensions");
-		Configuration.browser = "chrome";
-		WebDriverManager.getInstance(CHROME)
-				.setup();
+		Configuration.browser = "CHROME";
+		WebDriverManager.getInstance();
 		return new org.openqa.selenium.chrome.ChromeDriver(options);
 	}
 }

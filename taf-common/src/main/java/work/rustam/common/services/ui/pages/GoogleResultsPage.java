@@ -17,7 +17,7 @@ package work.rustam.common.services.ui.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import org.springframework.stereotype.Service;
-
+import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
 
 @Service
@@ -26,8 +26,14 @@ public class GoogleResultsPage{
 		return $$("#search  h3");
 	}
 
+	public GoogleResultsPage search(String query)
+		{
+		$(By.name("q")).setValue(query).pressEnter();
+		return page(GoogleResultsPage.class);
+	}
+
 	public ElementsCollection navigationLabels() {
-		return $$("#fsl a");
+		return $$(By.xpath("/descendant::h3[1]"));
 	}
 }
 

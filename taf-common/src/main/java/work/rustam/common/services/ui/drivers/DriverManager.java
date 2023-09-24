@@ -33,7 +33,6 @@ public class DriverManager {
             default: initHeadlessChrome();
         }
         Configuration.timeout = 20000;
-        Configuration.startMaximized = true;
     }
 
     private static void initHeadlessChrome(){

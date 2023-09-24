@@ -15,8 +15,9 @@
  */
 package skeleton_tests;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.cucumber.spring.CucumberContextConfiguration;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.DataProvider;
@@ -26,11 +27,10 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.isIE;
 
 @CucumberOptions(
-		plugin = {"io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm","json:target/cucumber-report.json"},
-		tags = {"not @Ignore", "not @InDev"}
-)
+		glue = {"skeleton_tests.stepsDef", "skeleton_tests.configuration"},
+		plugin = {"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","json:target/cucumber-report.json"},
+		tags = "@api or @ui")
 public class RunAcceptanceTests extends AbstractTestNGCucumberTests {
-
 	@Override
 	@DataProvider(parallel = true)
 	public Object[][] scenarios() {
@@ -38,7 +38,7 @@ public class RunAcceptanceTests extends AbstractTestNGCucumberTests {
 	}
 
 	@AfterClass
-	public static void ieRelax() {
+	public void ieRelax() {
 		if (isIE()) {
 			closeWebDriver();
 			sleep(500);
@@ -46,7 +46,7 @@ public class RunAcceptanceTests extends AbstractTestNGCucumberTests {
 	}
 
 	@AfterSuite
-	public static void teardown() {
+	public void teardown() {
 		System.out.println("\n\n\n\n\n\n ***************************************Test Suite Completed!!!!******************************************");
 	}
 }
