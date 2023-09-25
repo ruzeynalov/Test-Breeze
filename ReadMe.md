@@ -8,8 +8,8 @@ This maven project contains two submodules: common/core module of test automatio
 <a name="required-software-and-tools"></a>
 ### Required Software and Tools & Prerequisites
 
-* **Java** version: **Oracle Java 11** and higher (Execute `java -version` in command line after installation)
-* **Apache Maven** version: **3.9.4** and higher (Execute `mvn -version` in command line after installation)
+* **Java** version: **Oracle Java 11** and higher (Execute `java --version` in command line after installation)
+* **Apache Maven** version: **3.9.4** and higher (Execute `mvn --version` in command line after installation)
 * **Allure commandline** - instructions on [how to install](https://www.npmjs.com/package/allure-commandline)
 
  <a name="how-to-run-acceptance-tests"></a>
