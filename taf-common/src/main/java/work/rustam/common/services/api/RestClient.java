@@ -9,7 +9,6 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,10 +27,8 @@ import static io.restassured.RestAssured.given;
 @Setter
 @Slf4j
 public class RestClient {
-    protected Response response;
-    protected ValidatableResponse json;
+    protected ThreadLocal<Response> response = ThreadLocal.withInitial(() -> null);
     protected RequestSpecification request;
-
     //*********************************************Constructors*******************************************************//
     public RestClient() {
         request = new RequestSpecBuilder().addHeader("X-ACCEPTANCE-TEST","TRUE")
@@ -70,39 +67,46 @@ public class RestClient {
     }
 
     public Response sendPostRequest(String endPoint, Map<String, String> body) {
-        return response = given().spec(request).body(body).post(endPoint);
+         response.set(given().spec(request).body(body).post(endPoint));
+         return response.get();
     }
 
     //*********************************************Operations*********************************************************//
 
     //GET
     public Response sendGetRequest(String endPoint, HashMap<String, String> paramsMap) {
-        return response = given().spec(request).params(paramsMap).get(endPoint);
+        response.set(given().spec(request).params(paramsMap).get(endPoint));
+        return response.get();
     }
 
     public Response sendGetRequest(String endPoint) {
-        return response = given().spec(request).get(endPoint);
+        response.set(given().spec(request).get(endPoint));
+        return response.get();
     }
 
 
     //POST
     public Response sendPostRequest(String endPoint, String body) {
-        return response = given().spec(request).body(body).post(endPoint);
+        response.set(given().spec(request).body(body).post(endPoint));
+        return response.get();
     }
 
     public Response sendPostRequest(String endPoint, Object object) {
-        return response = given().spec(request).body(object).post(endPoint);
+        response.set(given().spec(request).body(object).post(endPoint));
+        return response.get();
     }
 
 
     //PUT
     public Response sendPutRequest(String endPoint, Object object) {
-        return response = given().spec(request).body(object).put(endPoint);
+        response.set(given().spec(request).body(object).put(endPoint));
+        return response.get();
     }
 
     //DELETE
     public Response sendDeleteRequest(String endPoint) {
-        return response = given().spec(request).delete(endPoint);
+        response.set(given().spec(request).delete(endPoint));
+        return response.get();
     }
 
     //*********************************************Parameters*********************************************************//

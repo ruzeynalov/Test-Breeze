@@ -22,7 +22,7 @@ import org.springframework.beans.factory.annotation.Value;
 import work.rustam.common.services.api.models.UserResponse;
 import work.rustam.common.services.api.models.UsersResponse;
 
-import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ApiStepDef extends AbstractStepsDef  {
 
@@ -41,7 +41,7 @@ public class ApiStepDef extends AbstractStepsDef  {
 
     @Then("response contain user with first name equal to {string}")
     public void responseContainUserWithFirstNameEqualToJanet(String name) {
-        UserResponse userResponse = restService.getResponse().as(UserResponse.class);
+        UserResponse userResponse = restService.getResponse().get().as(UserResponse.class);
         assertThat(userResponse.getData().getName()).isEqualTo(name);
     }
 
@@ -52,7 +52,7 @@ public class ApiStepDef extends AbstractStepsDef  {
 
     @Then("response contain data for {int} users")
     public void responseContainDataForUsers(int numberOfUsers) {
-        UsersResponse usersResponse = restService.getResponse().as(UsersResponse.class);
+        UsersResponse usersResponse = restService.getResponse().get().as(UsersResponse.class);
         assertThat(usersResponse.getData().size()).isEqualTo(numberOfUsers);
     }
 
