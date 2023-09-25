@@ -164,12 +164,6 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <properties>
-                        <property>
-                            <name>dataproviderthreadcount</name>
-                            <value>1</value>
-                        </property>
-                    </properties>
                     <includes>
                         <include>${run.classes}</include>
                     </includes>

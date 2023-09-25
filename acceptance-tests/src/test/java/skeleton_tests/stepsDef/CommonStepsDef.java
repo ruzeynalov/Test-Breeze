@@ -18,15 +18,11 @@ package skeleton_tests.stepsDef;
 import io.cucumber.java.en.And;
 
 import static com.codeborne.selenide.Selenide.sleep;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CommonStepsDef extends AbstractStepsDef {
-
-    @And("User wait for {int} seconds")
-    public void iWaitSeconds(int sec) {
-		sleep(sec*1000);
-    }
-
     @And("The status code is {int}")
-    public void theStatusCodeIs(int arg0) {
+    public void theStatusCodeIs(int statusCode) {
+        assertThat(restService.getResponse().get().statusCode()).isEqualTo(statusCode);
     }
 }
