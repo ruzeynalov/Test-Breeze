@@ -1,5 +1,7 @@
 This maven project contains two submodules: common/core module of test automation framework and acceptance test module
 
+Technologies used: Spring, CucumberJVM, TestNG, Selenide, RestAssured, Allure 
+
 ### Table of contents
 1. [Required Software and Tools & Prerequisites](#required-software-and-tools)
 2. [How to build maven projects and run all tests](#how-to-run-acceptance-tests)
