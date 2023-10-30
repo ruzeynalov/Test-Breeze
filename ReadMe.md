@@ -19,7 +19,7 @@ Technologies used: Spring, CucumberJVM, TestNG, Selenide, RestAssured, Allure
 
 * Open a terminal or command prompt
 * Go to project's root
-* Execute `mvn clean install -Dapp_env=dev"` in order to run tests
+* Execute `mvn clean install -Dapp_env=dev` in order to run tests
 * Supported browsers are: Chrome(default), ChromeHeadless. Pass following parameter `-Dbrowser=ChromeHeadless` in oder to run UI tests in headless mode
 * In order to run tests in parallel mode set `dataproviderthreadcount` to value `> 1` for maven-failsafe-plugin properties in pom.xml
 
