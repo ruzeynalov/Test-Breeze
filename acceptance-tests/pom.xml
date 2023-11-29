@@ -17,7 +17,7 @@
         <spring.version>5.3.30</spring.version>
         <assertj.version>3.24.2</assertj.version>
         <lombok.version>1.18.30</lombok.version>
-        <logback.version>1.4.11</logback.version>
+        <logback.version>1.4.12</logback.version>
         <aspectj.version>1.9.20.1</aspectj.version>
         <allure.version>2.24.0</allure.version>
         <allure.maven.version>2.12.0</allure.maven.version>
