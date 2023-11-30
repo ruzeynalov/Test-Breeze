@@ -14,7 +14,7 @@
         <!--libs versions-->
         <spring.version>5.3.30</spring.version>
         <lombok.version>1.18.30</lombok.version>
-        <logback.version>1.4.11</logback.version>
+        <logback.version>1.4.12</logback.version>
         <selenide.version>6.18.0</selenide.version>
         <jackson.version>2.15.2</jackson.version>
         <rest-assured>5.3.2</rest-assured>
