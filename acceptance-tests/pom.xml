@@ -14,7 +14,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <compiler.plugin.version>3.11.0</compiler.plugin.version>
         <cucumber.version>7.14.0</cucumber.version>
-        <spring.version>5.3.30</spring.version>
+        <spring.version>6.1.14</spring.version>
         <assertj.version>3.24.2</assertj.version>
         <lombok.version>1.18.30</lombok.version>
         <logback.version>1.4.12</logback.version>
