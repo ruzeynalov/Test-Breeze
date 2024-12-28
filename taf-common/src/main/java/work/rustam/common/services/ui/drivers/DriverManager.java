@@ -21,16 +21,15 @@ public class DriverManager {
 
     public static void initBrowser(String browser){
         switch (browser){
-            case "ChromeHeadless":
-                initHeadlessChrome();
-                break;
             case "Chrome":
                 initChrome();
                 break;
-            case "Selenoid":
-                initSelenoid();
+            case "HtmlUnit":
+                initHtmlUnit();
                 break;
-            default: initHeadlessChrome();
+            default:
+                initHeadlessChrome();
+                break;
         }
         Configuration.timeout = 20000;
     }
@@ -39,11 +38,11 @@ public class DriverManager {
         Configuration.browser = "work.rustam.common.services.ui.drivers.HeadlessChromeDriver";
     }
 
-    private static void initChrome(){
-        Configuration.browser = "work.rustam.common.services.ui.drivers.ChromeDriver";
+    private static void initHtmlUnit(){
+        Configuration.browser = "work.rustam.common.services.ui.drivers.HtmlUnitDriver";
     }
 
-    private static void initSelenoid(){
-        Configuration.browser = "work.rustam.common.services.ui.drivers.SelenoidDriver";
+    private static void initChrome(){
+        Configuration.browser = "work.rustam.common.services.ui.drivers.ChromeDriver";
     }
 }

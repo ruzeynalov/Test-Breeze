@@ -19,7 +19,7 @@ This maven module contains e2e acceptance tests
 * Execute `mvn clean install -D cucumber.options="--tags @api"` in order to run API tests
 * Execute `mvn clean install -D cucumber.options="--tags @ui"` in order to run UI tests
 * Execute `mvn clean install` for all test suites
-* Supported browsers are: Chrome(default), ChromeHeadless, Selenoid (dockerized Chrome). Pass following parameter `-D browser ChromeHeadless` in oder to run UI tests in headless mode
+* Supported browsers are: Chrome, ChromeHeadless(default). Pass following parameter `-D browser=Chrome` in order to run UI tests headed mode.
 
 <a name="reports"></a>
 ### Reports  
