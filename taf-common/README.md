@@ -1,14 +1,13 @@
 This maven module contains shared(common) components for the Test Automation Framework
 
-
 ### Table of contents
 1. [Required Software and Tools](#required-software-and-tools)
 2. [Build project](#build-project)
 
 <a name="required-software-and-tools"></a>
 ### Required Software and Tools  
-* **Java** version: **Oracle Java 8** and higher (Execute `javac -version` in command line after installation)
-* **Apache Maven** version: **3.6.1** and higher (Execute `mvn -version` in command line after installation)
+* **Java** version: **Oracle Java 17** and higher (Execute `java --version` in command line after installation)
+* **Apache Maven** version: **3.9.9** and higher (Execute `mvn --version` in command line after installation)
 
 <a name="build-project"></a>
 ### Build project  

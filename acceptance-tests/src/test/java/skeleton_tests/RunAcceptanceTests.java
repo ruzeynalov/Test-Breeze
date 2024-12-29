@@ -20,6 +20,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 
 import static com.codeborne.selenide.Selenide.sleep;
@@ -28,8 +29,7 @@ import static com.codeborne.selenide.WebDriverRunner.isIE;
 
 @CucumberOptions(
 		glue = {"skeleton_tests.stepsDef", "skeleton_tests.configuration"},
-		plugin = {"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","json:target/cucumber-report.json"},
-		tags = "@api or @ui")
+		plugin = {"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","json:target/cucumber-report.json"})
 public class RunAcceptanceTests extends AbstractTestNGCucumberTests {
 	@Override
 	@DataProvider(parallel = true)
@@ -47,6 +47,7 @@ public class RunAcceptanceTests extends AbstractTestNGCucumberTests {
 
 	@AfterSuite
 	public void teardown() {
+		closeWebDriver();
 		System.out.println("\n\n\n\n\n\n ***************************************Test Suite Completed!!!!******************************************");
 	}
 }

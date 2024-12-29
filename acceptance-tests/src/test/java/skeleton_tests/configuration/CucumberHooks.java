@@ -30,6 +30,8 @@ import org.springframework.beans.factory.annotation.Value;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.driver;
 import static work.rustam.common.services.ui.drivers.DriverManager.initBrowser;
 
 @Slf4j
@@ -72,6 +74,7 @@ public class CucumberHooks {
         } else {
             log.info(testStatusText.getTEXT_FOR_PASSED_TEST());
         }
+        closeWebDriver();
     }
 
     public void setScenarioName(Scenario scenario) {

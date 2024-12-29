@@ -16,23 +16,21 @@
 package work.rustam.common.services.ui.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-//import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.NonNull;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class HeadlessChromeDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(@NonNull Capabilities capabilities) {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless=new");
-        //chromeOptions.addArguments("--window-size=1920,1080");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--window-size=1920,1080");
         chromeOptions.addArguments("--no-sandbox");
-        //chromeOptions.addArguments("--disable-gpu");
-        chromeOptions.addArguments("--disable-dev-shm-usage");
-       //return WebDriverManager.chromedriver().capabilities(chromeOptions).create();
-	return new org.openqa.selenium.chrome.ChromeDriver(chromeOptions);
+        chromeOptions.addArguments("--disable-gpu");
+
+        return WebDriverManager.chromedriver().capabilities(chromeOptions).create();
     }
 }
