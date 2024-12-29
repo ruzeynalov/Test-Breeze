@@ -17,7 +17,6 @@ package skeleton_tests.configuration;
 
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.test.context.TestPropertySources;
 import uk.org.lidalia.sysoutslf4j.context.SysOutOverSLF4J;
 
 
@@ -27,8 +26,8 @@ import uk.org.lidalia.sysoutslf4j.context.SysOutOverSLF4J;
 @ComponentScan("work.rustam.common.services")
 
 @PropertySources({
-        @PropertySource("classpath:/properties/env/${app_env}.properties"),
-        @PropertySource("classpath:/properties/endpoint/${app_env}-endpoint.properties"),
+        @PropertySource("classpath:/properties/env/${app_env:local}.properties"),
+        @PropertySource("classpath:/properties/endpoint/${app_env:local}-endpoint.properties"),
         @PropertySource("classpath:/properties/common/webdrivermanager.properties"),
 })
 public class AppConfig {

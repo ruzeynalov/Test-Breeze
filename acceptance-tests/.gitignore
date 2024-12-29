@@ -10,6 +10,5 @@ build
 log/
 target/
 
-#Local properties
-local-*.properties
-
+#Logs
+*.log

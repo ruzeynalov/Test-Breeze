@@ -9,7 +9,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <compiler.plugin.version>3.11.0</compiler.plugin.version>
@@ -20,7 +20,7 @@
         <logback.version>1.5.15</logback.version>
         <aspectj.version>1.9.20.1</aspectj.version>
         <allure.version>2.24.0</allure.version>
-        <allure.maven.version>2.12.0</allure.maven.version>
+        <allure.maven.version>2.15.2</allure.maven.version>
         <maven.resources.version>3.3.1</maven.resources.version>
         <maven.failsafe.version>3.1.2</maven.failsafe.version>
         <jackson.version>2.15.2</jackson.version>
@@ -192,10 +192,10 @@
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>report</goal>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>report</goal>
                         </goals>
                         <phase>post-integration-test</phase>
                     </execution>
