@@ -21,7 +21,7 @@
         <allure.version>2.24.0</allure.version>
         <html-unit.version>4.13.0</html-unit.version>
 
-        <webdrivermanager.version>5.9.2</webdrivermanager.version>
+        <webdrivermanager.version>6.1.0</webdrivermanager.version>
     </properties>
 
     <dependencies>
