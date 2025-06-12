@@ -10,8 +10,8 @@ Technologies used: Spring, CucumberJVM, TestNG, Selenide, RestAssured, Allure
 <a name="required-software-and-tools"></a>
 ### Required Software and Tools & Prerequisites
 
-* **Java** version: **Oracle Java 17** and higher (Execute `java --version` in command line after installation)
-* **Apache Maven** version: **3.9.9** and higher (Execute `mvn --version` in command line after installation)
+* **Java** version: **Oracle Java 21** and higher (Execute `java --version` in command line after installation)
+* **Apache Maven** version: **3.9.10** and higher (Execute `mvn --version` in command line after installation)
 * **Allure commandline** - instructions on [how to install](https://www.npmjs.com/package/allure-commandline)
 
  <a name="how-to-run-acceptance-tests"></a>

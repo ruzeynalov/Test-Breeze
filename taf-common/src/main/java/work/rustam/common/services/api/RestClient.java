@@ -39,6 +39,7 @@ public class RestClient {
                 .addFilter(new RequestLoggingFilter())
                 .addFilter(new ResponseLoggingFilter())
                 .addHeader("X-ACCEPTANCE-TEST","TRUE")
+                .addHeader("x-api-key","reqres-free-v1")
                 .build();
     }
 
@@ -51,6 +52,7 @@ public class RestClient {
                 .addFilter(new RequestLoggingFilter())
                 //.addFilter(new ResponseLoggingFilter())
                 .addHeader("X-ACCEPTANCE-TEST","TRUE")
+                .addHeader("x-api-key","reqres-free-v1")
                 .build();
 
         return given().spec(request).auth().none();

@@ -6,8 +6,8 @@ This maven module contains shared(common) components for the Test Automation Fra
 
 <a name="required-software-and-tools"></a>
 ### Required Software and Tools  
-* **Java** version: **Oracle Java 17** and higher (Execute `java --version` in command line after installation)
-* **Apache Maven** version: **3.9.9** and higher (Execute `mvn --version` in command line after installation)
+* **Java** version: **Oracle Java 21** and higher (Execute `java --version` in command line after installation)
+* **Apache Maven** version: **3.9.10** and higher (Execute `mvn --version` in command line after installation)
 
 <a name="build-project"></a>
 ### Build project  
