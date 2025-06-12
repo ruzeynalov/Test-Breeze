@@ -18,7 +18,7 @@ This maven module contains e2e acceptance tests
 * Go to project's root
 * Execute `mvn clean install` for all test suites
 * Execute `mvn clean install -Dcucumber.filter.tags="@api"` in order to run only API tests
-* Execute `mvn clean install -Dcucumber.filter.tags="@ui"` in order to run only UI tests
+* Execute `mvn clean install -Dcucumber.filter.tags="@ui"` in order to run only UI tests in headless mode (could fail due to of Google Captcha)
 * Supported browsers are: Chrome, ChromeHeadless(default). Pass following parameter `-D browser=Chrome` in order to run UI tests headed mode.
 * In order to configure number of threads when running tests in parallel mode pass `-Ddataproviderthreadcount=4` argument with custom value
 
